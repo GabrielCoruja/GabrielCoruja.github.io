@@ -1,4 +1,5 @@
-let peçaDeXadrez = peçaDeXadrez.toLowerCase('CaVAlo');
+let peçaDeXadrez = 'caVAlo';
+peçaDeXadrez = peçaDeXadrez.toLowerCase();
 
 switch (peçaDeXadrez){
 
