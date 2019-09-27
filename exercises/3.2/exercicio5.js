@@ -1,8 +1,14 @@
-let numero = 11;
+let numero = 197;
+let contador = 0;
 
-if (numero % 2 === 0 || numero % 3 === 0){
-    console.log("Não é um numero primo")
+for (let i = 2; i <= numero; i++){
+
+    if(numero % i == 0){
+    contador++;
+    }
+    if(contador == 2){
+    console.log('Este número não é primo')
+    return
+    }
 }
-else{
-    console.log("Este é um numero primo");
-}
+console.log('Este numero é primo')
