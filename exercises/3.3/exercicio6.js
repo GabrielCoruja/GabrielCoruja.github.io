@@ -1,10 +1,3 @@
-function inteiro(n){
-let soma = 0;
+let array = [2, 3, 2, 5, 8, 2, 3];
 
-    for (let i = 1; i <= n; i++){
-        soma = soma + i;
-    }
-    return soma; 
-}
-n = 5;
-console.log(inteiro(n));
+    
