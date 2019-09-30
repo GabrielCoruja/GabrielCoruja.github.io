@@ -16,7 +16,7 @@ let g = 0;
         g++;
         h = 0;
     }
-    console.log(repetidor);
+    return repetidor;
 
 }
 

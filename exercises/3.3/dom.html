@@ -1,24 +1,45 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
-  <body>
-    <h2 id="page-title">Título</h2>
-    <p id="paragraph">Dê uma cor para esse parágrafo!</p>
-    <h4 id="subtitle">Subtítulo</h4>
-    <p id="second-paragraph">Segundo parágrafo!</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 3.3</title>
 
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Exercício 3.3 - JavaEscripito </h1>
+    <div class="main-content">
+      <div class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </div>
+    </div>
     <script>
       
-      
-
-      var titulo = document.getElementById("page-title");
-      titulo.textContent = "Vida de Inseto";
-      
-      var paragraph = document.getElementsByTagName("p");
-      
-      paragraph.style.color = "red";
-    
-
-
     </script>
   </body>
 </html>

@@ -11,11 +11,11 @@ let sufixo,prefixo;
         return
     }
     if(prefixo == sufixo){
-        console.log(true);
+        return true
     }else{
-        console.log(false);
+        return false
     }
 }
-let palavras = sufixo("tryee","be");
+let palavras = sufixo("trybe","be");
 
 console.log(palavras);
