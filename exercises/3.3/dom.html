@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -39,7 +39,38 @@
       </div>
     </div>
     <script>
-      
+
+      function descricao(texto){
+        var textos = document.getElementsByTagName("div")[1];
+        textos.textContent = "Eu espero ter uma carreira de sucesso e que consiga viajar para muitos lugares";
+      }
+
+      function squareLeftRight(color){
+        var squareLeftRight = document.getElementsByClassName("main-content")[0];
+        squareLeftRight.style.background = "#11a36a";
+      }
+
+      function squareCenter(cor){
+        let squareCenter = document.getElementsByClassName("center-content")[0];
+        squareCenter.style.background = "white";
+      } 
+
+      function titulo(text){
+        let titulo = document.getElementsByClassName("title")[0];
+        titulo.textContent = "Exercício 3.3 - JavaScript";
+      }
+
+      function upper(maiucula){
+        let caixaAlta = document.getElementsByTagName("div")[0];
+        caixaAlta.style.textTransform = "uppercase";
+      }
+
+      function tagsp(conteudo){
+        for (let i = 0; i < 3; i++){
+          console.log(document.getElementsByTagName("p")[i].innerHTML)
+        }
+      }
+
     </script>
   </body>
 </html>
