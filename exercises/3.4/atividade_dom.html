@@ -62,14 +62,17 @@
     h.innerHTML = "Exercício 3.4 - Javascript DOM";
     document.getElementsByTagName("body")[0].appendChild(h);
 
+    //numero 2
     let main = document.createElement("div");
     main.className = "main-content"
     document.getElementsByTagName("body")[0].appendChild(main);
 
+    //numero 3
     let center = document.createElement("div");
     center.className = "center-content"
     document.getElementsByClassName("main-content")[0].appendChild(center);
 
+    //numero 4
     let texto = document.createElement("p");
     texto.textContent = "Estou sofrendo, mas gostando de fazer esta atividade"
     document.getElementsByClassName("center-content")[0].appendChild(texto);
@@ -77,7 +80,18 @@
     //numero 5
     let left = document.createElement("div");
     left.className = "left-content"
-    document.getElementsByClassName("main-content").appendChild(left);
+    document.getElementsByClassName("main-content")[0].appendChild(left);
+
+    //numero 6
+    let right = document.createElement("div");
+    right.className = "right-content"
+    document.getElementsByClassName("main-content")[0].appendChild(right);
+
+    //numero 7
+    let image = document.createElement("img");
+    image.src = "https://picsum.photos/200";
+    document.getElementsByClassName("left-content")[0].appendChild(image);
+
 
 
     </script>
