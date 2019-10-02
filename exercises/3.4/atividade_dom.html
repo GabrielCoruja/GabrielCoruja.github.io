@@ -71,6 +71,7 @@
     let center = document.createElement("div");
     center.className = "center-content"
     document.getElementsByClassName("main-content")[0].appendChild(center);
+    
 
     //numero 4
     let texto = document.createElement("p");
@@ -89,10 +90,62 @@
 
     //numero 7
     let image = document.createElement("img");
+    image.className = "small-image"
     image.src = "https://picsum.photos/200";
     document.getElementsByClassName("left-content")[0].appendChild(image);
 
+    //numero 8
+    
+    let array = ["um","dois","três","quatro","cinco","seis","sete","oito","nove","dez"];
+    let random = [];
+    
+    for (let i = 0; i < 10;i++){
 
+    let aleatorios = array[Math.floor(Math.random() * (array.length))];
+      if(random.indexOf(aleatorios) == -1){
+        random.push(aleatorios)
+
+        var lista = document.createElement("p");
+        document.getElementsByClassName("right-content")[0].appendChild(lista);
+        lista.textContent = aleatorios;
+      }else{
+    i--;
+    }
+    }
+
+    // numero 9
+    for(let i = 1; i < 4; i++){
+      let tags = document.createElement("h3")
+      document.getElementsByClassName("main-content")[0].appendChild(tags)
+    }
+    
+
+    // Parte II
+    //numero 1
+    h.className = "title";
+
+    //numero 2
+    let tagh3 = document.getElementsByTagName("h3")
+    for (let i = 0; i < 3; i++){
+    tagh3[i].className = "description";
+    }
+    
+    //numero 3
+    document.getElementsByClassName("main-content")[0].removeChild(left);
+
+    //numero 4
+    let centra = document.getElementsByClassName("right-content");
+    centra.style = "margin-right: auto";
+
+    //numero 5
+    center.parentNode.style = 'background-color: green'
+
+    //numero 6
+    var parent = document.getElementsByClassName("right-content")[0]
+    var child = parent.getElementsByTagName("p")[9]
+    parent.removeChild(child);
+    var child2 = parent.getElementsByTagName("p")[8]
+    parent.removeChild(child2);
 
     </script>
   </body>
