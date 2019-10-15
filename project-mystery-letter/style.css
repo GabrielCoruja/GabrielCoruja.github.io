@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+    background-image: url(https://projects-static.raspberrypi.org/projects/mystery-letter/2a96eebd88c217c889597b8045bb99dae95d9218/en/resources/mystery-letter-rough-paper.png);
+}
+#interaçao-usuario-e-site {
+    font-size: 6mm;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#recebe-frase-gerada {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.classe-criada-pelo-usuario {
+    margin-left: 2px;
+    padding: 10px;
+}
