@@ -77,18 +77,15 @@ const expected_result = {
 function longestNamedBook() {
   const livro = books.reduce((acumulador, ganhador) => {
     if(ganhador.name.length > acumulador.name.length) {
-      acumulador = ganhador
+      acumulador = ganhador.name
     } else {
-
-
-
-
-
-      
       acumulador = acumulador
     }
-    return acumulador
+      return acumulador
   })
+  return livro
+  
 }
+console.log(longestNamedBook())
 
 assert.deepEqual(longestNamedBook(), expected_result);
