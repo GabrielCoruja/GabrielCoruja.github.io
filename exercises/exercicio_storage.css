@@ -1,0 +1,10 @@
+article {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 30%;
+    margin-top: 15px;
+    text-align: justify;
+    
+}
