@@ -1,0 +1,189 @@
+* {
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 90%;
+    height: 100px;
+    border: 1px solid red;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.flex-direction__column { flex-direction: column; }
+.justify-content__space-between { justify-content: space-between; }
+.justify-content__center { justify-content: center; }
+.align-items__flex-start { align-items: flex-start; }
+.automatic-box-height { height: auto; }
+.ball { border-radius: 100%; }
+.green { background-color: green; }
+.blue { background-color: blue; }
+.red { background-color: red; }
+.yellow { background-color: yellow; }
+.black { background-color: black; }
+.medium {
+    width: 50px;
+    height: 50px;
+}
+
+#exercise-1 {
+    animation-delay: 1s;
+    animation-duration: 3s;
+    animation-name: number;
+    animation-fill-mode: forwards;
+}
+
+#exercise-2 {
+    animation-delay: 2s;
+    animation-duration: 2s;
+    animation-name: number;
+    animation-fill-mode: forwards;
+}
+#exercise-3 {
+    animation-delay: 1s;
+    animation-duration: 2s;
+    animation-name: number;
+    animation-iteration-count: 2;
+    animation-direction: alternate;
+}
+#exercise-4:hover {
+    animation-name: number;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+#section-5:hover #exercise-5{
+    animation-name: number;
+    animation-duration: 5s;
+}
+#exercise-6-square:hover ~ #exercise-6 {
+    animation-name: number2;
+    animation-duration: 5s;
+}
+
+#exercise-7 {
+    animation-name: number3;
+    animation-duration: 10s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+#exercise-8 {
+    animation-name: number4;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+#exercise-9 {
+    animation-name: number5;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+#exercise-10 {
+    animation-name: number6;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+#exercise-11_1, #exercise-11_2, #exercise-11_3, #exercise-11_4, #exercise-11_5 {
+    animation-name: number;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+#exercise-11_1 {
+    animation-timing-function: linear;
+}
+#exercise-11_2 {
+    animation-timing-function: ease;
+}
+#exercise-11_3 {
+    animation-timing-function: ease-in;
+}
+#exercise-11_4 {
+    animation-timing-function: ease-out;
+}
+#exercise-11_5 {
+    animation-timing-function: ease-in-out;
+}
+#exercise-12:active {
+    animation-duration: 1s;
+    animation-name: number7;
+    animation-fill-mode: forwards;
+
+}
+@keyframes number {
+    from {
+        margin-left: 0%;
+    }     
+    to {
+        margin-left: 95%;
+    } 
+}
+
+@keyframes number2 {
+    0% {
+        margin-right: 0%;
+    }     
+    100% {
+        margin-right: 90%;
+    } 
+}
+
+@keyframes number3 {
+    0% {
+        width: 50px;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes number4 {
+    from {
+        background: red;
+    }
+    to {
+        background: yellow;
+    }
+}
+@keyframes number5 {
+    0% {
+        background: red;
+    }
+    33% {
+        background: yellow;
+    }
+    66% {
+        background: blue;
+    }
+    100% {
+        background: green;
+    }
+}
+@keyframes number6 {
+    0% {
+        background: red;
+        width: 50px;
+    }
+    33% {
+        background: yellow;
+    }
+    66% {
+        background: blue;
+    }
+    100% {
+        background: green;
+        width: 100%;
+    }
+}
+@keyframes number7{
+    from {
+        background:black;
+    }
+    to {
+        opacity: 0;
+    }
+}
