@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Live Lecture 9.2</title>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+  </script>
+  <script>
+
+    function sleep(sleepDuration) {
+      const now = new Date().getTime()
+      while(new Date().getTime() < now + sleepDuration) {
+        // processing...
+      }
+    }
+
+    function fun1(callback) {
+      setTimeout(() => {
+        console.log("Função 1")
+        callback()
+      }, Math.random() * 2000)
+    }
+
+    function fun2() {
+      setTimeout(() => {
+        console.log("Função 2")
+      }, Math.random() * 2000)
+    }
+
+    console.log("Antes de chamar as funções")
+
+    // fun1()
+    // fun2()
+    fun1(fun2)
+
+    console.log("Depois de chamar as funções")
+
+    window.onload = () => {
+      let button = document.querySelector("#click-me")
+      button.addEventListener("click", (event) => {
+        fun1()
+      })
+    }
+
+    const appendJoke = (joke) => {
+      let ul = document.querySelector("ul")
+      let li = document.createElement("li")
+      li.innerHTML = joke
+      ul.appendChild(li)
+    }
+
+    $.getJSON("https://icanhazdadjoke.com/search?term=spider", function(data) {
+      appendJoke(data.results[0].joke)
+      $.getJSON("https://icanhazdadjoke.com/search?term=ghost", function(data) {
+        appendJoke(data.results[0].joke)
+        $.getJSON("https://icanhazdadjoke.com/search?term=pizza", function(data) {
+          appendJoke(data.results[0].joke)
+          $.getJSON("https://icanhazdadjoke.com/search?term=wolf", function(data) {
+            appendJoke(data.results[0].joke)
+            $.getJSON("https://icanhazdadjoke.com/search?term=ant", function(data) {
+              appendJoke(data.results[0].joke)
+            })
+          })
+        })
+      })
+    })
+
+  </script>
+  <style>
+    .square {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      transition: 2s;
+    }
+
+    .square:hover {
+      width: 400px;
+      height: 400px;
+      background-color: green;
+    }
+  </style>
+</head>
+<body>
+  <div class="square"></div>
+  <button id="click-me">Click me!</button>
+  <ul></ul>
+</body>
+</html>
