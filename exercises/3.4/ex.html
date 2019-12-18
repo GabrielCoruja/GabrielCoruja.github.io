@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="pai">ontem
+        <div id="primeiroFilho">hoje</div>
+        <div id="elementoOndeVoceEsta">amanha
+          <div id="primeiroFilhoDoFilho">segunda</div>
+          <div id="segundoEUltimoFilhoDoFilho">terça</div>
+        </div>
+        <div id="terceiroFilho">quarta</div>
+        <div id="quartoEUltimoFilho">quinta</div>
+      </div>
+
+      <script>
+      
+      
+      let pai = document.getElementById("elementoOndeVoceEsta");
+
+      function exemplo(valores){
+      pai.parentNode.style.color = "green"
+      pai.firstChild.textContent = "I am the best"
+      }
+       
+      let irmao = document.createElement("div");
+      irmao.innerHTML = "algum texto"
+
+      let filho = document.createElement("div");
+      filho.innerHTML = "novo filho"
+
+      let neto = document.createElement("div");
+      neto.innerHTML = "Agora é um neto";
+
+      document.getElementById("pai").appendChild(irmao);
+      document.getElementById("elementoOndeVoceEsta").appendChild(filho);
+      document.getElementById("primeiroFilhoDoFilho").appendChild(neto);
+
+      var x = document.getElementById("primeiroFilho").nextSibling;
+      x.innerHTML = "nova mensagem";
+      </script>
+</body>
+</html>

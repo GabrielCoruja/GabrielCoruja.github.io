@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Live Lecture 9.1</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+      border: 1px solid red;
+      margin-bottom: 1px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+        if (typeof(Storage) != "undefined") {
+            let views = Number(localStorage.getItem("views"))
+            if (views) {
+                views += 1
+                localStorage.setItem("views", views)
+            } else {
+                localStorage.setItem("views", 1)
+            }
+            let span = document.querySelector("span.views")
+            span.innerHTML = `Número de visitas: ${localStorage.getItem("views")}`
+            let color = localStorage.color
+            if (color) document.body.style.backgroundColor = color
+        } else {
+            document.write("Sem suporte para Web Storage")
+        }
+        let buttons = document.querySelectorAll("button")
+        for (let button of buttons) {
+            button.addEventListener("click", event => {
+                let color = event.target.innerHTML
+                localStorage.setItem("color", color)
+                document.body.style.backgroundColor = color
+            })
+        }
+    }
+  </script>
+</head>
+<body>
+    <div class="container">
+        <span class="views"></span>
+    </div>
+    <div class="container">
+        <button>green</button>
+        <button>blue</button>
+        <button>yellow</button>
+    </div>
+</body>
+</html>
