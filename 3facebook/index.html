@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook</title>
+    <link type="text/css" rel="stylesheet"
+        href="https://static.xx.fbcdn.net/rsrc.php/v3/yF/l/0,cross/hbEzAgAuucC.css?_nc_x=Ij3Wp8lg5Kz"
+        data-bootloader-hash="KuFFA" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
+		<link href="css/bootstrap-datepicker.css" rel="stylesheet"/>
+		<script src="js/bootstrap-datepicker.min.js"></script> 
+		<script src="js/bootstrap-datepicker.pt-BR.min.js" charset="UTF-8"></script>
+		
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+</head>
+
+<body>
+    <div class="head direction center">
+        <div class="head-box direction between">
+            <div class="logo">
+                <img src="facebook-log.png" width="170px">
+            </div>
+            <div class="form direction">
+                <form class="form direction between"
+                    action="https://www.facebook.com/login/device-based/regular/login/?login_attempt=1&lwv=110"
+                    method="post" novalidate="1" onsubmit>
+                    <div class="form-margin">
+                        <label class="text" for="email">Email ou telefone</label> <br class="space">
+                        <input class="input-log input-text" type="email" id="email" required="required" name="E-mail">
+                    </div>
+                    <div class="form-margin">
+                        <label class="text" for="senha">Senha</label> <br class="space">
+                        <input class="input-log input-text" type="password" id="senha" required="required" name="senha">
+                        <br class="space">
+                        <p class="text"><span>Esqueceu a conta?</span></p>
+                    </div>
+                    <div class="form-margin">
+                        <button>Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="page direction center">
+        <div class="left">
+            <div class="intro-text">O Facebook ajuda você a se conectar e compartilhar com as pessoas que fazem
+                parte da sua vida.</div>
+            <img id="imagem" src="https://static.xx.fbcdn.net/rsrc.php/v3/yi/r/OBaVg52wtTZ.png" width="537"
+                height="195">
+        </div>
+        <div class="right-body">
+            <div class="title-right-body">
+                <h1>Abra uma conta</h1>
+                <p>É rápido e fácil.</p>
+            </div>
+            <input class="input input-top input-text" type="text" required="required" name="primeiro-nome"
+                placeholder="Nome">
+            <input class="input input-top input-text" type="text" required="required" name="sobrenome"
+                placeholder="Sobrenome">
+            <input class="input input-bottom input-text" type="email" required="required" name="email"
+                placeholder="Celular ou email">
+            <br>
+            <input class="input input-bottom input-text" type="password" required="required" name="senha"
+                placeholder="Nova senha">
+            <p class="subtitle">Data de nascimento:</p>
+            <div class="_5k_5"></div>
+            <span class="_5k_4" data-type="selectors" data-name="birthday_wrapper" id="u_0_z"><span>
+                    <div class="input-group date">
+							<input type="text" class="form-control" id="exemplo" >
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
+						</div>
+                    <p class="subtitle margin-sex">Gênero:</p>
+                    <div>
+                        <label for="sexo1" class="sex"><input class="input-sex" type="radio" name="feminino"
+                                value="F">Feminino</label>
+                        <label for="sexo2" class="sex"><input class="input-sex" type="radio" name="feminino"
+                                value="M">Masculino</label>
+                        <label for="sexo3" class="sex"><input class="input-sex" type="radio" name="feminino"
+                                value="P">Personalizado</label>
+                    </div>
+                    <div class="gender">
+                        <select class="pronoun"></select>
+                        <p>O seu pronome fica visível para todos.</p>
+                        <label><input class="input input-bottom input-text" type="text"
+                                placeholder="Gênero (opcional)"></label>
+                    </div>
+                    <p class="warn-text">Ao clicar em Cadastre-se, você concorda com nossos <a
+                            href="/legal/terms/update" id="terms-link" target="_blank" rel="nofollow">Termos</a>, <a
+                            href="/about/privacy/update" id="privacy-link" target="_blank" rel="nofollow">Política de
+                            Dados</a> e <a href="/policies/cookies/" id="cookie-use-link" target="_blank"
+                            rel="nofollow">Política de
+                            Cookies</a>. Você pode receber notificações por SMS e pode cancelar isso quando quiser.</p>
+                    <button type="submit" id="final-button" name="websubmit">Cadastre-se</button>
+                    <div id="final-text"><a href="/pages/create/?ref_type=registration_form">Criar
+                        uma Página</a> para uma celebridade, banda ou empresa.</div>
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

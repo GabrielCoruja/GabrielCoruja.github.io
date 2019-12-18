@@ -1,0 +1,26 @@
+body{
+    text-align: center;
+}
+#title{
+    margin-top: 50px;
+    font-size: 15mm;
+}
+#numero-correspondente-cor{
+    margin-top: 30px;
+    font-size: 10mm;
+}
+.bolas-com-opção-de-cores{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+.posicionamento-das-bolas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+#reiniciar-jogo{
+    margin-top: 5%;
+    padding: 1%;
+}
