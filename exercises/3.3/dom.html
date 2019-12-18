@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 3.3</title>
+
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Exercício 3.3 - JavaEscripito </h1>
+    <div class="main-content">
+      <div class="center-content">
+        <p>Texto padrão do nosso site</p>
+        <p>-----</p>
+        <p>Trybe</p>
+      </div>
+    </div>
+    <script>
+
+      function descricao(texto){
+        var textos = document.getElementsByTagName("div")[1];
+        textos.textContent = "Eu espero ter uma carreira de sucesso e que consiga viajar para muitos lugares";
+      }
+
+      function squareLeftRight(color){
+        var squareLeftRight = document.getElementsByClassName("main-content")[0];
+        squareLeftRight.style.background = "#11a36a";
+      }
+
+      function squareCenter(cor){
+        let squareCenter = document.getElementsByClassName("center-content")[0];
+        squareCenter.style.background = "white";
+      } 
+
+      function titulo(text){
+        let titulo = document.getElementsByClassName("title")[0];
+        titulo.textContent = "Exercício 3.3 - JavaScript";
+      }
+
+      function upper(maiucula){
+        let caixaAlta = document.getElementsByTagName("div")[0];
+        caixaAlta.style.textTransform = "uppercase";
+      }
+
+      function tagsp(conteudo){
+        for (let i = 0; i < 3; i++){
+          console.log(document.getElementsByTagName("p")[i].innerHTML)
+        }
+      }
+
+    </script>
+  </body>
+</html>
