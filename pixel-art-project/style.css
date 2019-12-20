@@ -1,44 +1,52 @@
-h1{
-    font-size: 6vw;
-    text-align: center;
+h1 {
+  font-size: 6vw;
+  text-align: center;
 }
-#tabela td{
-    border: solid thin;
-    padding: 0.5rem 0.5rem;
+
+.div-cores {
+  display: flex;
+  justify-content: center;
 }
-#div-cores{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.button-clear, .button-create-square-pixel {
+  height: 30px;
+  margin-top: 40px;
 }
-.cores{
-    width: 50px;
-    height: 50px;
-    border: 2px solid yellow;
+
+.cores {
+  width: 40px;
+  height: 40px;
+  border: 2px solid yellow;
 }
-#paleta1{
-    background-color: black;
+
+input {
+  height: 25px;
+  margin-top: 40px;
 }
-#paleta2{
-    background-color: green;
+#paleta1 {
+  background-color: black;
 }
-#paleta3{
-    background-color: red;
+
+#selected-color {
+  background: black;
+  border: solid 1px black;
+  padding: 20px;
+  width: 20%;
+  margin-top: 30px;
 }
-#paleta4{
-    background-color: blue;
+
+#tabela2 {
+  border: solid thin;
+  border-collapse: collapse;
+  margin: 0 auto 0 auto;
+  margin-top: 40px;
 }
-#tabela2{
-    border: solid thin;
-    border-collapse: collapse;
-    margin: 0 auto 0 auto;
-    margin-top: 40px;
+
+#tabela2 td {
+  border: solid thin;
+  padding: 0.5rem 0.5rem;
 }
-#tabela2 td{
-    border: solid thin;
-    padding: 0.5rem 0.5rem;
-}
-td{
-    width: 40px;
-    height: 40px;
+
+td {
+  width: 40px;
+  height: 40px;
 }
