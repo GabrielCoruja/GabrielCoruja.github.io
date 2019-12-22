@@ -19,17 +19,22 @@ for (let index = 1; index < color.length; index++) {
 }
 
 buttonCreatSquare.addEventListener('click', () => {
-  while (table.hasChildNodes()) {
-    table.removeChild(table.firstChild);
+  if (input.value < 5) {
+    alert('Selecione valores a partir de 5')
   }
-  let tbodyNew = document.createElement('tbody');
-  table.appendChild(tbodyNew)
-  for (let index = 0; index < input.value; index++) {
-    const tags = document.createElement('tr');
-    tbodyNew.appendChild(tags);
+  else {
+    while (table.hasChildNodes()) {
+      table.removeChild(table.firstChild);
+    }
+    let tbodyNew = document.createElement('tbody');
+    table.appendChild(tbodyNew)
     for (let index = 0; index < input.value; index++) {
-      const tag = document.createElement('td');
-      tags.appendChild(tag);
+      const tags = document.createElement('tr');
+      tbodyNew.appendChild(tags);
+      for (let index = 0; index < input.value; index++) {
+        const tag = document.createElement('td');
+        tags.appendChild(tag);
+      }
     }
   }
   pintarTodasCores()
