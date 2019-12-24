@@ -14,7 +14,7 @@ gerarLista.addEventListener("click", () => {
   tagOl.appendChild(li);
   textoInput.value = "";
   generateStyle();
-  elementCompleted();
+  elementCompleted(li);
   delectedAll();
   deleteElementsCompleted(li);
 });
@@ -33,17 +33,19 @@ const generateStyle = () => {
   }
 };
 
-const elementCompleted = () => {
-  const list = document.getElementsByTagName("li");
-  for (let clas of list) {
-    clas.addEventListener("dblclick", () => {
-      clas.style.textDecoration = "line-through";
-      clas.style.color = "red";
-    });
-  }
+const elementCompleted = li => {
+  li.addEventListener("dblclick", () => {
+    if (li.style.textDecoration) {
+      li.style.textDecoration = "";
+      li.style.color = "";
+    } else {
+      li.style.textDecoration = "line-through";
+      li.style.color = "red";
+    }
+  });
 };
 
-function deleteElementsCompleted(li) {
+function deleteElementsCompleted() {
   removeElementsSelecteds.addEventListener("click", () => {
     const list = document.getElementsByTagName("li");
     for (let index = 0; index < list.length; index++) {
@@ -63,8 +65,8 @@ function deleteSelected() {
 
 function delectedAll() {
   removerLista.addEventListener("click", function() {
-    while (tag.firstChild) {
-      tag.firstChild.remove();
+    while (tagOl.firstChild) {
+      tagOl.firstChild.remove();
     }
   });
 }
