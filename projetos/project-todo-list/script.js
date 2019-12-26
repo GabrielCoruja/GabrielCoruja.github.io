@@ -16,7 +16,7 @@ gerarLista.addEventListener("click", () => {
   generateStyle();
   elementCompleted(li);
   delectedAll();
-  deleteElementsCompleted(li);
+  deleteElementsCompleted();
 });
 
 const generateStyle = () => {
