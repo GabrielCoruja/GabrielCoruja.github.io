@@ -1,0 +1,13 @@
+body {
+    margin: 30px;
+    text-align: justify;
+}
+table tbody {
+    display: flex;
+
+}
+tbody .information, tbody .about {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}

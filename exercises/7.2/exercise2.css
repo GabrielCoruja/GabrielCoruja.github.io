@@ -1,0 +1,59 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 30px;
+  text-align: justify;
+}
+h2 {
+  font-size: 8mm;
+}
+h3 {
+  font-size: 8mm;
+}
+.header {
+  font-size: 9mm;
+  font-weight: bold;
+
+}
+p, li {
+  font-size: 7mm;
+}
+
+@media screen and (min-width: 800px) {
+  .header {
+    text-align: center;
+  }
+  nav ul {
+    display: flex;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 20px;
+  }
+  .aside-one ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 180px;
+  }
+  .aside-one ul li {
+    font-size: 6mm;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .aside-one ul {
+    height: 120px;
+  }
+  nav ul li {
+    font-size: 7mm;
+  }
+  p, li, .aside-one ul li {
+    font-size: 6mm;
+  }
+}
