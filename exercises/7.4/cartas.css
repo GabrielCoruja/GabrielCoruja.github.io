@@ -1,0 +1,62 @@
+img {
+    width: 300px;
+}
+
+.scale:hover {
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-name: scale;
+}
+
+#letters {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#letters img {
+    width: 220px;
+    margin: 10px;
+}
+
+.rotate:hover {
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-name: rotate;
+}
+
+.skewing:hover {
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: 2;
+    animation-name: skewing;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes skewing {
+    0% {
+        transform: skew(0deg);
+    }
+    100% {
+        transform: skew(180deg);
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1, 1);
+    }
+    to {
+        transform: scale(1.5, 1.5);
+    }
+}
