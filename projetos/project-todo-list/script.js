@@ -1,11 +1,6 @@
 const tagOl = document.getElementById("lista-de-elementos-adicionados");
 const textoInput = document.getElementById("adicionar-tarefa");
 const gerarLista = document.getElementsByClassName("estilo-botoes")[0];
-const removerLista = document.getElementsByClassName("estilo-botoes")[2];
-const removerItem = document.getElementsByClassName("estilo-botoes")[3];
-const removeElementsSelecteds = document.getElementById(
-  "delete-elements-selected"
-);
 let itemSelected = "";
 
 gerarLista.addEventListener("click", () => {
@@ -46,6 +41,9 @@ const elementCompleted = li => {
 };
 
 function deleteElementsCompleted() {
+  const removeElementsSelecteds = document.getElementById(
+    "delete-elements-selected"
+  );
   removeElementsSelecteds.addEventListener("click", () => {
     const list = document.getElementsByTagName("li");
     for (let index = 0; index < list.length; index++) {
@@ -58,15 +56,34 @@ function deleteElementsCompleted() {
 }
 
 function deleteSelected() {
+  const removerItem = document.getElementsByClassName("estilo-botoes")[3];
   removerItem.addEventListener("click", () => {
     itemSelected.remove();
   });
 }
 
 function delectedAll() {
+  const removerLista = document.getElementsByClassName("estilo-botoes")[2];
   removerLista.addEventListener("click", function() {
     while (tagOl.firstChild) {
       tagOl.firstChild.remove();
     }
   });
 }
+
+const upElement = document.getElementById("upElement");
+upElement.addEventListener("click", () => {
+  let previousElement = itemSelected.previousElementSibling;
+  tagOl.insertBefore(itemSelected, previousElement);
+});
+
+const downElement = document.getElementById("downElement");
+downElement.addEventListener("click", () => {
+  if(itemSelected.nextElementSibling == null) {
+    let firstElement = tagOl.firstElementChild;
+    tagOl.insertBefore(itemSelected, firstElement);
+  } else {
+  let nextElement = itemSelected.nextElementSibling;
+  tagOl.insertBefore(itemSelected, nextElement.nextSibling);
+  }
+});
