@@ -45,17 +45,10 @@ const tagSpan = document.getElementsByTagName("span");
 const clas = document.getElementsByClassName("last-job");
 const select = document.getElementById("opçao-de-estados");
 const reset = document.getElementById("reset");
-const arrayInput = [input[5], input[6]]
+// const arrayInput = [input[5], input[6]];
 
 submit.addEventListener("click", event => {
-  console.log(input)
-  console.log(input[8].pattern)
-  if(input[8].pattern == input[8].value) {
-    alert("falta")
-
-  }
   event.preventDefault();
-
 });
 
 function dataEntered(text, value, number) {
@@ -71,23 +64,6 @@ function valueEstate() {
   tagP.innerHTML = `Estado: ${select.value}`;
   datas.appendChild(tagP);
 }
-
-// for(let complement of arrayInput) {
-//   complement.addEventListener('click', display)
-// }
-
-// function display() {
-//   return complement.value
-// }
-// // function valor() {
-// //   for(let complement of arrayInput) {
-// //     complement.addEventListener('click', function() {
-
-      
-// //       return complement.value
-// //     })
-// //   }
-// // }
 
 data.addEventListener("click", () => {
   while (datas.hasChildNodes()) {
