@@ -7,8 +7,8 @@ gerarLista.addEventListener("click", () => {
   let li = document.createElement("li");
   li.innerHTML = textoInput.value;
   tagOl.appendChild(li);
+  saveList(textoInput.value);
   textoInput.value = "";
-  generateStyle();
   elementCompleted(li);
   delectedAll();
   deleteElementsCompleted();
@@ -68,6 +68,9 @@ function delectedAll() {
     while (tagOl.firstChild) {
       tagOl.firstChild.remove();
     }
+    if(localStorage.comments) {
+      localStorage.removeItem("comments")
+    }
   });
 }
 
@@ -79,11 +82,55 @@ upElement.addEventListener("click", () => {
 
 const downElement = document.getElementById("downElement");
 downElement.addEventListener("click", () => {
-  if(itemSelected.nextElementSibling == null) {
+  if (itemSelected.nextElementSibling == null) {
     let firstElement = tagOl.firstElementChild;
     tagOl.insertBefore(itemSelected, firstElement);
   } else {
-  let nextElement = itemSelected.nextElementSibling;
-  tagOl.insertBefore(itemSelected, nextElement.nextSibling);
+    let nextElement = itemSelected.nextElementSibling;
+    tagOl.insertBefore(itemSelected, nextElement.nextSibling);
   }
 });
+
+function saveList(value) {
+  const object = value;
+  if (!localStorage.comments) {
+    const newComment = JSON.stringify([object]);
+    localStorage.setItem("comments", newComment);
+  } else {
+    const actualComments = localStorage.comments;
+    const formatedActualComments = JSON.parse(actualComments);
+    const finalComments = [...formatedActualComments, object];
+    localStorage.comments = JSON.stringify(finalComments);
+  }
+  const list = document.getElementsByTagName("li");
+  for(let index = 0; index < list.length; index++) {
+    if(list[index].style.textDecoration) {
+      localStorage.setItem(`style${index}`, 1);
+    } else {
+      localStorage.setItem(`style${index}`, 0);
+    }
+  }
+}
+
+function showList() {
+  const list = document.getElementsByTagName("li");
+  if(localStorage.comments) {
+    let local = JSON.parse(localStorage.comments);
+    for(let index = 0; index < local.length; index++) {
+      const tagLi = document.createElement("li");
+      tagLi.innerHTML = local[index];
+      tagOl.appendChild(tagLi);
+      elementCompleted(tagLi);
+      delectedAll();
+      deleteElementsCompleted();
+    }
+    for(let index = 0; index < list.length; index++) {
+      if(localStorage[`style${index}`] == 0) {
+        list[index].style.textDecoration = "line-throught"
+      }
+    }
+  }
+}
+
+showList();
+generateStyle();
