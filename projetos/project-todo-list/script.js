@@ -1,19 +1,14 @@
 const tagOl = document.getElementById("lista-de-elementos-adicionados");
 const textoInput = document.getElementById("adicionar-tarefa");
 const gerarLista = document.getElementsByClassName("estilo-botoes")[0];
-const removerLista = document.getElementsByClassName("estilo-botoes")[2];
-const removerItem = document.getElementsByClassName("estilo-botoes")[3];
-const removeElementsSelecteds = document.getElementById(
-  "delete-elements-selected"
-);
 let itemSelected = "";
 
 gerarLista.addEventListener("click", () => {
   let li = document.createElement("li");
   li.innerHTML = textoInput.value;
   tagOl.appendChild(li);
+  saveList(textoInput.value);
   textoInput.value = "";
-  generateStyle();
   elementCompleted(li);
   delectedAll();
   deleteElementsCompleted();
@@ -46,6 +41,9 @@ const elementCompleted = li => {
 };
 
 function deleteElementsCompleted() {
+  const removeElementsSelecteds = document.getElementById(
+    "delete-elements-selected"
+  );
   removeElementsSelecteds.addEventListener("click", () => {
     const list = document.getElementsByTagName("li");
     for (let index = 0; index < list.length; index++) {
@@ -58,15 +56,86 @@ function deleteElementsCompleted() {
 }
 
 function deleteSelected() {
+  const removerItem = document.getElementsByClassName("estilo-botoes")[3];
   removerItem.addEventListener("click", () => {
     itemSelected.remove();
   });
 }
 
 function delectedAll() {
+  const removerLista = document.getElementsByClassName("estilo-botoes")[2];
   removerLista.addEventListener("click", function() {
     while (tagOl.firstChild) {
       tagOl.firstChild.remove();
     }
+    if(localStorage.comments) {
+      localStorage.removeItem("comments")
+    }
   });
 }
+
+const upElement = document.getElementById("upElement");
+upElement.addEventListener("click", () => {
+  let previousElement = itemSelected.previousElementSibling;
+  tagOl.insertBefore(itemSelected, previousElement);
+});
+
+const downElement = document.getElementById("downElement");
+downElement.addEventListener("click", () => {
+  if (itemSelected.nextElementSibling == null) {
+    let firstElement = tagOl.firstElementChild;
+    tagOl.insertBefore(itemSelected, firstElement);
+  } else {
+    let nextElement = itemSelected.nextElementSibling;
+    tagOl.insertBefore(itemSelected, nextElement.nextSibling);
+  }
+});
+
+function saveList(value) {
+  const object = value;
+  if (!localStorage.comments) {
+    const newComment = JSON.stringify([object]);
+    localStorage.setItem("comments", newComment);
+  } else {
+    const actualComments = localStorage.comments;
+    const formatedActualComments = JSON.parse(actualComments);
+    const finalComments = [...formatedActualComments, object];
+    localStorage.comments = JSON.stringify(finalComments);
+  }
+  const list = document.getElementsByTagName("li");
+  for(let index = 0; index < list.length; index++) {
+    if(list[index].style.textDecoration) {
+      localStorage.setItem(`style${index}`, 1);
+    } else {
+      localStorage.setItem(`style${index}`, 0);
+    }
+  }
+}
+
+function showList() {
+  if(localStorage.comments) {
+    let local = JSON.parse(localStorage.comments);
+    for(let index = 0; index < local.length; index++) {
+      const tagLi = document.createElement("li");
+      tagLi.innerHTML = local[index];
+      tagOl.appendChild(tagLi);
+      elementCompleted(tagLi);
+      delectedAll();
+      deleteElementsCompleted();
+    }
+    completed()
+  }
+}
+
+function completedLocalStorage() {
+  const list = document.getElementsByTagName("li");
+  for(let index = 0; index < list.length; index++) {
+    if(localStorage[`style${index}`] == 1) {
+      list[index].style.textDecoration = "line-through";
+      list[index].style.color = "red";
+    }
+  }
+}
+
+showList();
+generateStyle();
