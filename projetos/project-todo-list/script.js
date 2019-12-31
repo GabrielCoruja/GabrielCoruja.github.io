@@ -113,7 +113,6 @@ function saveList(value) {
 }
 
 function showList() {
-  const list = document.getElementsByTagName("li");
   if(localStorage.comments) {
     let local = JSON.parse(localStorage.comments);
     for(let index = 0; index < local.length; index++) {
@@ -124,10 +123,16 @@ function showList() {
       delectedAll();
       deleteElementsCompleted();
     }
-    for(let index = 0; index < list.length; index++) {
-      if(localStorage[`style${index}`] == 0) {
-        list[index].style.textDecoration = "line-throught"
-      }
+    completed()
+  }
+}
+
+function completedLocalStorage() {
+  const list = document.getElementsByTagName("li");
+  for(let index = 0; index < list.length; index++) {
+    if(localStorage[`style${index}`] == 1) {
+      list[index].style.textDecoration = "line-through";
+      list[index].style.color = "red";
     }
   }
 }
