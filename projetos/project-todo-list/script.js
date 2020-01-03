@@ -7,11 +7,11 @@ gerarLista.addEventListener("click", () => {
   let li = document.createElement("li");
   li.innerHTML = textoInput.value;
   tagOl.appendChild(li);
-  saveList(textoInput.value);
   textoInput.value = "";
   elementCompleted(li);
   delectedAll();
   deleteElementsCompleted();
+  generateStyle();
 });
 
 const generateStyle = () => {
@@ -91,51 +91,41 @@ downElement.addEventListener("click", () => {
   }
 });
 
-function saveList(value) {
-  const object = value;
-  if (!localStorage.comments) {
-    const newComment = JSON.stringify([object]);
-    localStorage.setItem("comments", newComment);
-  } else {
-    const actualComments = localStorage.comments;
-    const formatedActualComments = JSON.parse(actualComments);
-    const finalComments = [...formatedActualComments, object];
-    localStorage.comments = JSON.stringify(finalComments);
+const saveTasks = document.getElementById('save-list');
+saveTasks.addEventListener('click', () => {
+  if (localStorage.comments) {
+    localStorage.removeItem('comments');
   }
-  const list = document.getElementsByTagName("li");
-  for(let index = 0; index < list.length; index++) {
-    if(list[index].style.textDecoration) {
-      localStorage.setItem(`style${index}`, 1);
+  const li = document.getElementsByTagName('li');
+  for (let index = 0; index < li.length; index++) {
+    const object = li[index].outerHTML;
+    if (!localStorage.comments) {
+      const newComment = JSON.stringify([object]);
+      localStorage.setItem("comments", newComment);
     } else {
-      localStorage.setItem(`style${index}`, 0);
+      const actualComments = localStorage.comments;
+      const formatedActualComments = JSON.parse(actualComments);
+      const finalComments = [...formatedActualComments, object];
+      localStorage.comments = JSON.stringify(finalComments);
     }
   }
-}
+})
 
 function showList() {
-  if(localStorage.comments) {
-    let local = JSON.parse(localStorage.comments);
-    for(let index = 0; index < local.length; index++) {
-      const tagLi = document.createElement("li");
-      tagLi.innerHTML = local[index];
-      tagOl.appendChild(tagLi);
-      elementCompleted(tagLi);
-      delectedAll();
-      deleteElementsCompleted();
-    }
-    completed()
-  }
-}
-
-function completedLocalStorage() {
-  const list = document.getElementsByTagName("li");
-  for(let index = 0; index < list.length; index++) {
-    if(localStorage[`style${index}`] == 1) {
-      list[index].style.textDecoration = "line-through";
-      list[index].style.color = "red";
+  if (localStorage.comments) {
+    const local = JSON.parse(localStorage.comments);
+    for (let index = 0; index < local.length; index++) {
+      let convertString = new DOMParser().parseFromString(`${local[index]}`, "text/html")
+      let tag = convertString.body.firstChild;
+      tagOl.appendChild(tag)
+      elementCompleted(tag);
     }
   }
 }
 
-showList();
-generateStyle();
+if (localStorage.comments) {
+  showList();
+  generateStyle();
+  delectedAll();
+  deleteElementsCompleted();
+}
