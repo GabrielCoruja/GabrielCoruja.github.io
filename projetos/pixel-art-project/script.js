@@ -20,14 +20,14 @@ for (let index = 1; index < color.length; index++) {
 
 buttonCreatSquare.addEventListener('click', () => {
   if (input.value < 5) {
-    alert('Selecione valores a partir de 5')
+    alert('Selecione valores a partir de 5');
   }
   else {
     while (table.hasChildNodes()) {
       table.removeChild(table.firstChild);
     }
     let tbodyNew = document.createElement('tbody');
-    table.appendChild(tbodyNew)
+    table.appendChild(tbodyNew);
     for (let index = 0; index < input.value; index++) {
       const tags = document.createElement('tr');
       tbodyNew.appendChild(tags);
