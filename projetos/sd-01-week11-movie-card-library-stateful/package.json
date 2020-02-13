@@ -1,4 +1,5 @@
 {
+  "homepage": "http://GabrielCoruja.github.io/projetos/sd-01-week11-movie-card-library-stateful",
   "name": "sd-01-week11-movie-card-library-stateful",
   "version": "0.1.0",
   "private": true,
@@ -9,6 +10,8 @@
     "react-scripts": "3.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --verbose=true",
@@ -33,6 +36,7 @@
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
     "eslint": "^6.6.0",
-    "eslint-config-airbnb": "^18.0.1"
+    "eslint-config-airbnb": "^18.0.1",
+    "gh-pages": "^2.2.0"
   }
 }
