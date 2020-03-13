@@ -7,7 +7,8 @@ h1 {
   display: flex;
   justify-content: center;
 }
-.button-clear, .button-create-square-pixel {
+
+.botão-limpar, .botão-criar-nova-tabela-pixel {
   height: 30px;
   margin-top: 40px;
 }
@@ -22,11 +23,12 @@ input {
   height: 25px;
   margin-top: 40px;
 }
+
 #paleta1 {
   background-color: black;
 }
 
-#selected-color {
+#selecionar-cor {
   background: black;
   border: solid 1px black;
   padding: 20px;

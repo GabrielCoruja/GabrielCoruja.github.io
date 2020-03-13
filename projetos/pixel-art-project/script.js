@@ -1,13 +1,15 @@
-const color = document.getElementsByClassName("cores");
-const printando = document.getElementsByTagName("td");
-const colorUsed = document.getElementById("selected-color");
-const buttonClear = document.getElementsByClassName("button-clear")[0];
-const buttonCreatSquare = document.getElementsByClassName("button-create-square-pixel")[0];
+const color = document.getElementsByClassName('cores');
+const printando = document.getElementsByTagName('td');
+const colorUsed = document.getElementById('selecionar-cor');
+const buttonClear = document.getElementsByClassName('botão-limpar')[0];
+const buttonCreatSquare = document.getElementsByClassName(
+  'botão-criar-nova-tabela-pixel'
+)[0];
 const table = document.getElementById('tabela2');
 const tbody = document.getElementsByTagName('tbody')[0];
 const input = document.getElementById('input');
 
-let selectColor = "black";
+let selectColor = 'black';
 pintarTodasCores();
 
 for (let index = 1; index < color.length; index++) {
@@ -21,8 +23,7 @@ for (let index = 1; index < color.length; index++) {
 buttonCreatSquare.addEventListener('click', () => {
   if (input.value < 5 || input.value > 50) {
     alert('Selecione valores de 5 até 50');
-  }
-  else {
+  } else {
     while (table.hasChildNodes()) {
       table.removeChild(table.firstChild);
     }
@@ -37,20 +38,20 @@ buttonCreatSquare.addEventListener('click', () => {
       }
     }
   }
-  pintarTodasCores()
-})
+  pintarTodasCores();
+});
 
 for (let paint of color) {
   paint.addEventListener('click', () => {
     let computedStyle = getComputedStyle(paint);
     selectColor = computedStyle.backgroundColor;
     colorUsed.style.background = selectColor;
-  })
+  });
 }
 
 function pintarTodasCores() {
   for (let recebendo of printando) {
-    recebendo.addEventListener("click", () => {
+    recebendo.addEventListener('click', () => {
       recebendo.style.background = selectColor;
     });
   }
@@ -60,4 +61,4 @@ buttonClear.addEventListener('click', () => {
   for (let index = 0; index < printando.length; index++) {
     printando[index].style.background = 'white';
   }
-})
+});
