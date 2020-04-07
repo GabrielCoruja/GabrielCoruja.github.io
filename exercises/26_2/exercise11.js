@@ -31,5 +31,7 @@ db.clientes.aggregate([
       }
     }
   },
+  // {$set: {inicialDate: {$first: 'compras.dataVenda'}}},
   {$sort: {'compras.dataVenda': -1}}
 ]);
+
