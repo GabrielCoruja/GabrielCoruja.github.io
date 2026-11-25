@@ -10,7 +10,6 @@ Feito à mão com **HTML, CSS e JavaScript puro**, sem frameworks e sem etapa de
 | :-- | :-- |
 | [`/`](https://gabrielcoruja.github.io/) | Portfólio: apresentação, experiência, projetos e contato |
 | [`projetos/`](projetos) | Meus primeiros projetos de 2019 e 2020, com visual e funcionalidades novos |
-| [`exercises/`](exercises) | Exercícios do curso da Trybe (2019–2020) |
 
 ## Primeiros passos
 
