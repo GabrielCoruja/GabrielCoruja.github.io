@@ -1,17 +1,113 @@
-h1 {
-    text-align: center;
-    background-image: url(https://projects-static.raspberrypi.org/projects/mystery-letter/2a96eebd88c217c889597b8045bb99dae95d9218/en/resources/mystery-letter-rough-paper.png);
-}
-#interaçao-usuario-e-site {
-    font-size: 6mm;
-    font-family: Arial, Helvetica, sans-serif;
-}
-#recebe-frase-gerada {
-    text-align: center;
-    margin-top: 60px;
+:root {
+  --fundo: #f3ede2;
+  --superficie: #fffdf8;
+  --texto: #2b2419;
+  --suave: #7b6f5d;
+  --borda: #e2d6c2;
+  --primaria: #9f1239;
+  --primaria-hover: #881337;
+  --sobre-primaria: #ffffff;
+  --mesa: #6b4f35;
+  color-scheme: light;
 }
 
-.classe-criada-pelo-usuario {
-    margin-left: 2px;
-    padding: 10px;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #17130e;
+    --superficie: #221c15;
+    --texto: #f6efe3;
+    --suave: #bcae98;
+    --borda: #3b3226;
+    --primaria: #fb7185;
+    --primaria-hover: #fda4af;
+    --sobre-primaria: #17130e;
+    --mesa: #3a2a1c;
+    color-scheme: dark;
+  }
 }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0; min-height: 100vh; background: var(--fundo); color: var(--texto);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.topo { padding: 16px; }
+.voltar { color: var(--suave); text-decoration: none; font-weight: 600; }
+.voltar:hover { color: var(--primaria); }
+
+.app { width: min(820px, 100% - 32px); margin: 0 auto 48px; }
+
+/* Título como se fosse feito de recortes de papel */
+h1 { text-align: center; margin: 8px 0 24px; font-size: clamp(2rem, 7vw, 3.2rem); }
+h1 span {
+  display: inline-block; padding: 4px 16px; color: #3b2a14;
+  background: url("background1.png") center / cover;
+  box-shadow: 2px 3px 0 rgb(0 0 0 / 25%);
+  font-family: Georgia, "Times New Roman", serif;
+}
+h1 span:first-child { transform: rotate(-3deg); }
+h1 span:last-child { transform: rotate(2deg); background-image: url("background2.png"); font-family: "Courier New", monospace; }
+
+.formulario {
+  background: var(--superficie); border: 1px solid var(--borda); border-radius: 16px; padding: 20px;
+}
+.formulario label { display: block; font-weight: 600; margin-bottom: 10px; }
+.linha { display: flex; gap: 10px; flex-wrap: wrap; }
+.linha input {
+  flex: 1; min-width: 200px; padding: 12px 14px; border-radius: 10px; border: 1px solid var(--borda);
+  background: var(--fundo); color: inherit; font: inherit;
+}
+.contador { margin: 8px 0 0; color: var(--suave); font-size: .9rem; min-height: 1.2em; }
+
+/* "Mesa" de madeira onde a carta aparece */
+.mesa {
+  margin-top: 20px; padding: 28px 20px; min-height: 220px; border-radius: 16px;
+  background:
+    repeating-linear-gradient(90deg, rgb(255 255 255 / 4%) 0 2px, transparent 2px 60px),
+    var(--mesa);
+  display: grid; place-items: center;
+}
+.carta { margin: 0; text-align: center; line-height: 2.6; max-width: 100%; }
+.carta--erro { color: #fff; font-weight: 700; font-size: 1.1rem; }
+.vazia { margin: 0; color: rgb(255 255 255 / 70%); }
+
+/* Recortes: cada palavra recebe uma classe de cada grupo */
+.recorte {
+  display: inline-block; margin: 6px 4px; padding: 4px 10px; cursor: pointer;
+  box-shadow: 2px 3px 0 rgb(0 0 0 / 35%);
+  animation: cair .35s ease-out both;
+  transition: transform .2s;
+}
+.recorte:hover { filter: brightness(1.05); }
+.recorte:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+@keyframes cair { from { opacity: 0; translate: 0 -12px; } to { opacity: 1; translate: 0 0; } }
+@media (prefers-reduced-motion: reduce) { .recorte { animation: none; } }
+
+.newspaper { background: #f5f1e6; color: #111; font-family: Georgia, "Times New Roman", serif; }
+.magazine1 { background: #111; color: #fff; font-family: "Arial Black", Impact, sans-serif; text-transform: uppercase; }
+.magazine2 { background: #2563eb; color: #fff; font-family: "Trebuchet MS", sans-serif; font-weight: 700; }
+.papel-creme { background: url("background1.png") center / cover; color: #3b2a14; font-family: "Courier New", monospace; font-weight: 700; }
+.papel-amarelo { background: url("background2.png") center / cover; color: #7c2d12; font-family: Georgia, serif; font-style: italic; }
+.papel-rosa { background: url("background3.png") center / cover; color: #4a044e; font-family: "Arial Black", sans-serif; }
+
+.medium { font-size: 1.1rem; }
+.big { font-size: 1.5rem; }
+.reallybig { font-size: 2rem; }
+
+.rotateleft { rotate: -6deg; }
+.rotateright { rotate: 6deg; }
+.skewleft { transform: skewX(-8deg); }
+.skewright { transform: skewX(8deg); }
+
+.acoes { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+.dica { text-align: center; color: var(--suave); font-size: .9rem; }
+.botao {
+  padding: 11px 18px; border-radius: 10px; border: 1px solid var(--primaria);
+  background: var(--primaria); color: var(--sobre-primaria); font: inherit; font-weight: 700; cursor: pointer;
+}
+.botao:hover { background: var(--primaria-hover); }
+.botao--secundario { background: transparent; color: var(--texto); border-color: var(--borda); }
+.botao--secundario:hover:not(:disabled) { background: var(--superficie); }
+.botao:disabled { opacity: .5; cursor: not-allowed; }
+:focus-visible { outline: 3px solid var(--primaria); outline-offset: 2px; }

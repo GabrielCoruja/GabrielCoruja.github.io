@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gabriel Dalseco · Software Engineer</title>
+  <meta name="description" content="Portfólio de Gabriel Dalseco, Software Engineer com foco em back-end Java e Spring Boot e experiência full stack com Node.js, TypeScript, React e Angular.">
+  <meta property="og:title" content="Gabriel Dalseco · Software Engineer">
+  <meta property="og:description" content="Back-end Java e Spring Boot, full stack com Node.js, TypeScript, React e Angular.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#4f46e5">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    // Aplica o tema salvo antes de desenhar a página, para evitar "piscar".
+    try {
+      const saved = localStorage.getItem('tema');
+      if (saved) document.documentElement.dataset.theme = saved;
+    } catch (e) { /* sem localStorage: segue o tema do sistema */ }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="topbar">
+    <nav class="container topbar__inner" aria-label="Principal">
+      <a href="#inicio" class="brand"><span aria-hidden="true">🦉</span> Gabriel Dalseco</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="visually-hidden">Abrir menu</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+      <ul id="menu" class="menu">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#primeiros-projetos">Primeiros passos</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li>
+          <button class="theme-toggle" type="button" aria-label="Alternar tema claro e escuro">
+            <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+    <!-- Apresentação -->
+    <section id="inicio" class="hero">
+      <div class="container hero__inner">
+        <p class="eyebrow">Olá, eu sou o</p>
+        <h1>Gabriel Dalseco <span class="wave" aria-hidden="true">🦉</span></h1>
+        <p class="hero__role">Software Engineer · Back-end Java &amp; Spring Boot · Full Stack</p>
+        <p class="hero__text">
+          Construo APIs seguras, integrações entre sistemas e aplicações web de ponta a ponta.
+          Hoje sou Engenheiro de Software na <strong>Mantris</strong>.
+        </p>
+        <div class="hero__actions">
+          <a class="button" href="#projetos">Ver projetos</a>
+          <a class="button button--ghost" href="https://www.linkedin.com/in/gabrieldalseco/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button button--ghost" href="https://github.com/GabrielCoruja" target="_blank" rel="noopener">GitHub</a>
+        </div>
+        <ul class="hero__stats" aria-label="Destaques">
+          <li><strong>6+</strong><span>anos com desenvolvimento</span></li>
+          <li><strong>1.000+</strong><span>pessoas formadas como instrutor</span></li>
+          <li><strong>Pós</strong><span>em Arquitetura de Software Distribuído</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="section">
+      <div class="container narrow">
+        <h2 class="section__title">Sobre mim</h2>
+        <p>
+          Sou engenheiro de software focado em <strong>back-end com Java e Spring Boot</strong>, com experiência
+          full stack em <strong>Node.js, TypeScript, React e Angular</strong>. Vim da Engenharia Mecânica e migrei
+          para a tecnologia em 2019. Na Trybe, passei mais de quatro anos como desenvolvedor back-end e professor,
+          e ajudei a formar mais de mil pessoas em desenvolvimento full stack.
+        </p>
+        <p>
+          Gosto de problemas de integração, de performance em banco de dados e de código fácil de manter.
+          Fora do código: futebol, corrida, games e automação industrial.
+        </p>
+
+        <h3 class="subtitle">O que eu faço</h3>
+        <ul class="feature-list">
+          <li><span aria-hidden="true">🔐</span> APIs REST com Spring Boot e Spring Security, com autenticação e permissões por perfil</li>
+          <li><span aria-hidden="true">🔗</span> Integrações REST e SOAP, com webhooks que validam assinatura e controlam idempotência</li>
+          <li><span aria-hidden="true">☁️</span> AWS (SES, S3, CloudWatch) para e-mail, armazenamento e observabilidade</li>
+          <li><span aria-hidden="true">⚡</span> Performance em PostgreSQL: eliminação de N+1, paginação e filtros dinâmicos</li>
+          <li><span aria-hidden="true">🐳</span> Docker e CI/CD com ambientes de dev, homologação e produção</li>
+        </ul>
+
+        <h3 class="subtitle">Tecnologias</h3>
+        <div class="stack">
+          <div><h4>Back-end</h4><p class="chips"><span>Java</span><span>Spring Boot</span><span>Spring Security</span><span>Node.js</span><span>Express</span><span>TypeScript</span></p></div>
+          <div><h4>Front-end</h4><p class="chips"><span>React</span><span>Angular</span><span>Redux</span><span>HTML</span><span>CSS</span></p></div>
+          <div><h4>Dados</h4><p class="chips"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>JPA / Hibernate</span><span>Sequelize</span></p></div>
+          <div><h4>Cloud e DevOps</h4><p class="chips"><span>AWS</span><span>Docker</span><span>GitHub Actions</span><span>Azure DevOps</span><span>Linux</span></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experiência -->
+    <section id="experiencia" class="section section--alt">
+      <div class="container narrow">
+        <h2 class="section__title">Experiência</h2>
+        <ol class="timeline">
+          <li>
+            <p class="timeline__date">set/2026 – atual</p>
+            <h3>Engenheiro de Software · Mantris</h3>
+            <p>Desenvolvimento de software em time remoto.</p>
+          </li>
+          <li>
+            <p class="timeline__date">jan/2025 – jun/2026</p>
+            <h3>Software Engineer · Organização Nacional de Acreditação (ONA)</h3>
+            <p>
+              APIs REST com Java e Spring Boot, Spring Security com perfis dinâmicos, integrações com OMIE (webhooks),
+              Correios e DATASUS (SOAP), AWS e otimização de consultas em PostgreSQL. CI/CD com Azure Pipelines.
+            </p>
+          </li>
+          <li>
+            <p class="timeline__date">out/2020 – dez/2024</p>
+            <h3>Backend Developer e Professor de Programação · Trybe</h3>
+            <p>
+              APIs com Java, Spring Boot e Node.js, CI/CD e mentoria técnica. Como professor, formei mais de
+              1.000 pessoas em desenvolvimento full stack (Node.js, MySQL, React e Redux).
+            </p>
+          </li>
+          <li class="timeline__edu">
+            <p class="timeline__date">2014 – 2023</p>
+            <h3>Formação</h3>
+            <p>
+              Pós-graduação em Arquitetura de Software Distribuído (PUC Minas) · Desenvolvimento de Software (Trybe) ·
+              Engenharia Mecânica (Centro Universitário de Belo Horizonte)
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Projetos em destaque -->
+    <section id="projetos" class="section">
+      <div class="container">
+        <h2 class="section__title">Projetos em destaque</h2>
+        <p class="section__lead">Projetos atuais, com testes automatizados, CI e documentação.</p>
+        <div class="cards">
+          <article class="card">
+            <p class="card__emoji" aria-hidden="true">🛒</p>
+            <h3>Loja Coruja</h3>
+            <p>Loja virtual com catálogo, filtros, carrinho com cupons e frete grátis, e checkout com validação.</p>
+            <p class="tags"><span>React</span><span>TypeScript</span><span>Redux Toolkit</span><span>Vite</span></p>
+            <p class="card__links">
+              <a href="https://gabrielcoruja.github.io/shopping_cart/" target="_blank" rel="noopener">Ver online ↗</a>
+              <a href="https://github.com/GabrielCoruja/shopping_cart" target="_blank" rel="noopener">Código</a>
+            </p>
+          </article>
+          <article class="card">
+            <p class="card__emoji" aria-hidden="true">🎭</p>
+            <h3>Eventos Culturais</h3>
+            <p>Aplicação full stack para gerenciar eventos culturais e categorias, com Docker Compose.</p>
+            <p class="tags"><span>Java</span><span>Spring Boot</span><span>Angular</span><span>MySQL</span></p>
+            <p class="card__links">
+              <a href="https://github.com/GabrielCoruja/cultural-events" target="_blank" rel="noopener">Código</a>
+            </p>
+          </article>
+          <article class="card">
+            <p class="card__emoji" aria-hidden="true">🔐</p>
+            <h3>SpringMarket</h3>
+            <p>API de e-commerce com Spring Security e JWT, perfis de acesso, Swagger e Checkstyle.</p>
+            <p class="tags"><span>Java</span><span>Spring Boot</span><span>JWT</span><span>PostgreSQL</span></p>
+            <p class="card__links">
+              <a href="https://github.com/GabrielCoruja/java-spring-ecommerce-api" target="_blank" rel="noopener">Código</a>
+            </p>
+          </article>
+          <article class="card">
+            <p class="card__emoji" aria-hidden="true">🚗</p>
+            <h3>Locadora de Carros</h3>
+            <p>API para gestão de frota, motoristas e uso de veículos, em arquitetura em camadas.</p>
+            <p class="tags"><span>Node.js</span><span>TypeScript</span><span>Express</span><span>MySQL</span></p>
+            <p class="card__links">
+              <a href="https://github.com/GabrielCoruja/drive-rental-control" target="_blank" rel="noopener">Código</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Primeiros projetos -->
+    <section id="primeiros-projetos" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Primeiros passos</h2>
+        <p class="section__lead">
+          Meus primeiros projetos com HTML, CSS e JavaScript puro, de 2019 e 2020. Eles ganharam um visual novo e
+          novas funcionalidades, mas continuam simples como quando foram feitos: sem frameworks.
+        </p>
+        <div class="cards cards--small">
+          <a class="mini-card" href="projetos/project-pixel-art/">
+            <span class="mini-card__emoji" aria-hidden="true">🎨</span>
+            <span><strong>Pixel Art</strong><small>Desenhe pixel a pixel e baixe como PNG</small></span>
+          </a>
+          <a class="mini-card" href="projetos/project-color-guess/">
+            <span class="mini-card__emoji" aria-hidden="true">🌈</span>
+            <span><strong>Adivinhe a Cor</strong><small>Jogo de adivinhar a cor pelo código RGB</small></span>
+          </a>
+          <a class="mini-card" href="projetos/project-todo-list/">
+            <span class="mini-card__emoji" aria-hidden="true">✅</span>
+            <span><strong>Lista de Tarefas</strong><small>Tarefas com filtros, reordenação e salvamento</small></span>
+          </a>
+          <a class="mini-card" href="projetos/meme-generator-project/">
+            <span class="mini-card__emoji" aria-hidden="true">😂</span>
+            <span><strong>Gerador de Memes</strong><small>Envie uma imagem, escreva e baixe o meme</small></span>
+          </a>
+          <a class="mini-card" href="projetos/project-mystery-letter/">
+            <span class="mini-card__emoji" aria-hidden="true">✉️</span>
+            <span><strong>Carta Misteriosa</strong><small>Transforma uma frase em uma carta de recortes</small></span>
+          </a>
+          <a class="mini-card" href="projetos/coruja-social/">
+            <span class="mini-card__emoji" aria-hidden="true">👥</span>
+            <span><strong>Coruja Social</strong><small>Tela de login e cadastro com validação</small></span>
+          </a>
+          <a class="mini-card" href="projetos/projetos-html-css/html-css/">
+            <span class="mini-card__emoji" aria-hidden="true">🐓</span>
+            <span><strong>Galo Forte e Vingador</strong><small>Minha primeira página: só HTML e CSS</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section">
+      <div class="container narrow contact">
+        <h2 class="section__title">Vamos conversar?</h2>
+        <p>Estou sempre aberto a trocar ideias sobre tecnologia, oportunidades ou um bom café.</p>
+        <div class="hero__actions hero__actions--center">
+          <a class="button" href="mailto:gabridal96@gmail.com">Enviar e-mail</a>
+          <a class="button button--ghost" href="https://www.linkedin.com/in/gabrieldalseco/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button button--ghost" href="https://github.com/GabrielCoruja" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Feito à mão com HTML, CSS e JavaScript por Gabriel Dalseco · <span id="ano"></span></p>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

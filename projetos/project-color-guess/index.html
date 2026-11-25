@@ -1,27 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jogo da adivinhação</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adivinhe a Cor</title>
+  <meta name="description" content="Jogo de adivinhar a cor a partir do código RGB.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌈</text></svg>">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="topo">
+    <a class="voltar" href="../../">← Portfólio</a>
+  </header>
+
+  <main class="jogo">
     <h1 id="title">Adivinhe a Cor</h1>
-    <h3 id="numero-correspondente-cor"></h3>
-    <h2 id="placar">Placar: </h2>
-    <div class="posicionamento-das-bolas">
-        <div class="bolas-com-opção-de-cores"></div>
-        <div class="bolas-com-opção-de-cores"></div>
-        <div class="bolas-com-opção-de-cores"></div>
-        <div class="bolas-com-opção-de-cores"></div>
-        <div class="bolas-com-opção-de-cores"></div>
-        <div class="bolas-com-opção-de-cores"></div>
+    <p class="descricao">Qual destas bolas tem a cor abaixo?</p>
+
+    <p id="rgb-color" class="rgb" aria-live="polite"></p>
+
+    <div class="placar" aria-live="polite">
+      <p>Placar <strong id="score">0</strong></p>
+      <p>Sequência <strong id="sequencia">0</strong></p>
+      <p>Recorde <strong id="recorde">0</strong></p>
     </div>
-    <button id="reiniciar-jogo" onClick="history.go(0)">Reiniciar o jogo</button>
-    <h2 id="acertou-ou-errou"></h2>         
-    <script src="script.js"></script>
+
+    <div id="balls" class="bolas" role="group" aria-label="Opções de cor"></div>
+
+    <p id="answer" class="resposta" role="status">Escolha uma cor!</p>
+
+    <div class="acoes">
+      <button type="button" id="proxima" class="botao" hidden>Próxima rodada →</button>
+      <button type="button" id="reset-game" class="botao botao--secundario">Reiniciar o jogo</button>
+    </div>
+
+    <fieldset class="dificuldade">
+      <legend>Dificuldade</legend>
+      <label><input type="radio" name="dificuldade" value="3"> Fácil · 3 cores</label>
+      <label><input type="radio" name="dificuldade" value="6" checked> Normal · 6 cores</label>
+      <label><input type="radio" name="dificuldade" value="9"> Difícil · 9 cores</label>
+    </fieldset>
+
+    <details class="regras">
+      <summary>Como funciona a pontuação?</summary>
+      <p>Acertar de primeira vale <strong>3 pontos</strong>. Acertar depois de errar vale <strong>1 ponto</strong>.
+        A sequência conta quantas rodadas seguidas você acertou de primeira.</p>
+    </details>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
-

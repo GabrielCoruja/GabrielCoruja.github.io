@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coruja Social · Projeto de estudo</title>
+  <meta name="description" content="Tela de login e cadastro de uma rede social fictícia, feita para estudo de formulários com HTML, CSS e JavaScript.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦉</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <p class="aviso" role="note">
+    Projeto de estudo: a Coruja Social é fictícia. Nenhum dado digitado aqui é enviado ou salvo.
+    <a href="../../">← Voltar ao portfólio</a>
+  </p>
+
+  <header class="cabecalho">
+    <div class="cabecalho__conteudo">
+      <p class="logo"><span aria-hidden="true">🦉</span> coruja<span>social</span></p>
+      <form id="form-login" class="login" novalidate aria-label="Entrar">
+        <div class="login__campo">
+          <label for="user-email-phone">E-mail ou telefone</label>
+          <input id="user-email-phone" type="text" autocomplete="off">
+        </div>
+        <div class="login__campo">
+          <label for="user-password">Senha</label>
+          <input id="user-password" type="password" autocomplete="off">
+          <a href="#" class="login__link" id="esqueceu">Esqueceu a conta?</a>
+        </div>
+        <button type="submit" id="button-login" class="botao botao--claro">Entrar</button>
+      </form>
+    </div>
+    <p id="mensagem-login" class="mensagem-login" role="status"></p>
+  </header>
+
+  <main class="pagina">
+    <section class="apresentacao">
+      <h2>A Coruja Social ajuda você a se conectar e compartilhar com as pessoas que fazem parte da sua vida.</h2>
+      <div class="rede" aria-hidden="true">
+        <span class="no no--1">🧑🏽‍💻</span>
+        <span class="no no--2">👩🏻‍🎨</span>
+        <span class="no no--3">🧑🏿‍🍳</span>
+        <span class="no no--4">👨🏼‍🎤</span>
+        <span class="no no--centro">🦉</span>
+      </div>
+    </section>
+
+    <section class="cadastro" aria-labelledby="titulo-cadastro">
+      <div id="area-formulario">
+        <h1 id="titulo-cadastro">Abra uma conta</h1>
+        <p class="cadastro__sub">É rápido e fácil.</p>
+
+        <form id="form-cadastro" novalidate>
+          <div class="grade-2">
+            <div class="campo">
+              <label for="firstname" class="visually-hidden">Nome</label>
+              <input id="firstname" name="firstname" placeholder="Nome" autocomplete="off">
+            </div>
+            <div class="campo">
+              <label for="lastname" class="visually-hidden">Sobrenome</label>
+              <input id="lastname" name="lastname" placeholder="Sobrenome" autocomplete="off">
+            </div>
+          </div>
+          <div class="campo">
+            <label for="phone_email" class="visually-hidden">Celular ou e-mail</label>
+            <input id="phone_email" name="phone_email" placeholder="Celular ou e-mail" autocomplete="off">
+          </div>
+          <div class="campo campo--senha">
+            <label for="password" class="visually-hidden">Nova senha</label>
+            <input id="password" name="password" type="password" placeholder="Nova senha" autocomplete="new-password" aria-describedby="forca-texto">
+            <button type="button" id="mostrar-senha" class="mostrar" aria-pressed="false">Mostrar</button>
+            <div class="forca" aria-hidden="true"><span id="forca-barra"></span></div>
+            <p id="forca-texto" class="forca__texto"></p>
+          </div>
+
+          <div class="campo">
+            <label for="birthdate" class="rotulo">Data de nascimento</label>
+            <input id="birthdate" name="birthdate" type="date">
+          </div>
+
+          <fieldset class="campo">
+            <legend class="rotulo">Gênero</legend>
+            <div class="generos">
+              <label><input type="radio" name="gender" value="Feminino"> Feminino</label>
+              <label><input type="radio" name="gender" value="Masculino"> Masculino</label>
+              <label><input type="radio" name="gender" value="Personalizado"> Personalizado</label>
+            </div>
+          </fieldset>
+
+          <div id="genero-personalizado" class="personalizado" hidden>
+            <label for="pronome" class="rotulo">Pronome</label>
+            <select id="pronome" name="pronome">
+              <option value="">Selecione seu pronome</option>
+              <option>Ela: "Deseje um feliz aniversário a ela!"</option>
+              <option>Ele: "Deseje um feliz aniversário a ele!"</option>
+              <option>Elu: "Deseje um feliz aniversário a elu!"</option>
+            </select>
+            <p class="cadastro__sub">O seu pronome fica visível para todos.</p>
+            <label for="gender-custom" class="visually-hidden">Gênero (opcional)</label>
+            <input id="gender-custom" name="gender-custom" placeholder="Gênero (opcional)">
+          </div>
+
+          <p id="erros" class="erros" role="alert"></p>
+
+          <p class="termos">Ao clicar em Cadastre-se, você concorda com os termos de uma rede social que não existe. 🙂</p>
+          <button type="submit" id="cadastrar" class="botao botao--verde">Cadastre-se</button>
+        </form>
+      </div>
+
+      <div id="boas-vindas" class="boas-vindas" hidden tabindex="-1">
+        <p class="boas-vindas__emoji" aria-hidden="true">🎉</p>
+        <h2 id="boas-vindas-titulo"></h2>
+        <dl id="resumo"></dl>
+        <button type="button" id="voltar-cadastro" class="botao botao--claro">Fazer outro cadastro</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    Coruja Social · projeto de estudo de Gabriel Dalseco · sem relação com nenhuma rede social real
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
