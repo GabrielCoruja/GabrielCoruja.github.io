@@ -1,60 +1,29 @@
-Instruções a seguir para criar o site:
+# 🌈 Adivinhe a Cor
 
-Requisitos
+Jogo em que você vê um código **RGB** e precisa descobrir qual das bolas tem aquela cor. Feito com **HTML, CSS e JavaScript puro**.
 
-Os elementos indispensáveis para o seu projeto:
+**🔗 Ver online:** https://gabrielcoruja.github.io/projetos/project-color-guess/
 
-Um título centralizado com o nome do seu jogo.
+## Como jogar
 
-Um texto centralizado com o RGB a ser adivinhado.
+1. Leia o código, por exemplo `RGB(117, 77, 198)`.
+2. Clique na bola que você acha que tem essa cor.
+3. Acertou de primeira? **+3 pontos**. Acertou depois de errar? **+1 ponto**.
 
-6 bolas como opção de cor de adivinhação.
+## Funcionalidades
 
-Um texto que indica se a cor selecionada foi a correta.
+- **Três níveis**: fácil (3 cores), normal (6) e difícil (9).
+- **Placar, sequência de acertos de primeira e recorde**. O recorde fica salvo no navegador.
+- Cada bola errada some da rodada. Quando você acerta, as outras se apagam e aparece o botão **Próxima rodada**.
+- **Reiniciar o jogo** zera o placar sem recarregar a página.
+- Animações respeitam a configuração de **movimento reduzido** do sistema.
+- As bolas são `<button>`, então dá para jogar pelo teclado.
+- **Modo escuro** automático e layout responsivo.
 
-Um botão com a opção de reiniciar o jogo com uma nova cor aleatória.
+## Histórico
 
-Funcionamento:
+Projeto de 2019, do início dos meus estudos na Trybe. A primeira versão tinha 6 bolas, o placar de +3 por acerto e um botão que recarregava a página para reiniciar. Agora o jogo tem rodadas, níveis, recorde e um visual novo, e continua sem frameworks.
 
-Ao abrir a página com seu projeto, ele já deve carregar uma primeira sequência de bolas coloridas.
+## Como executar
 
-As cores das bolas devem ser geradas aleatoriamente via JavaScript.
-
-O botão reiniciar o jogo deve sortear uma nova cor RGB e novas cores para as bolas, além de voltar os textos para a forma inicial.
-
-Bônus:
-
-Crie um placar que incremente 3 pontos para cada acerto no jogo.
-
-Melhore o funcionamento do seu placar com uma regra que decremente 1 ponto para cada erro.
-
-O placar não pode ficar menor que 0.
-Crie uma regra de incremento progressivo que:
-
-Ao acertar três respostas consecutivas você ganha 1 ponto extra a cada resposta certa
-
-Acerto 1: +3 pontos.
-
-Acerto 2: +3 pontos.
-
-Acerto 3: +4 pontos.
-
-Acerto 4: +4 pontos.
-
-Erro 1: -1 ponto.
-
-Acerto 5: +3 pontos.
-
-Ao errar três respostas consecutivas você perde 1 ponto extra a cada resposta errada.
-
-Erro 1: -1 pontos.
-
-Erro 2: -1 pontos.
-
-Erro 3: -2 pontos.
-
-Erro 4: -2 pontos.
-
-Exemplo: Joana tem 3 acertos consecutivos seguidos de 4 erros e por fim mais 2 acertos. A pontuação de Jonas é de 10 pontos. (+3 +3 +4 -1 -1 -2 -2 +3 +3)
-
-Crie a opção do usuário escolher a quantidade de bolas coloridas que vão entrar no jogo.
+Abra o `index.html` no navegador.

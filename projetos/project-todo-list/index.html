@@ -1,35 +1,53 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Lista de Tarefas</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div id="centrar-elementos-na-pagina">
-      <div id="container">
-        <h1 class="centralizar-estrutura">Minha lista de atividades</h1>
-        <div id="text-of-information">
-          <p>Clique duas vezes em um item para marcá-lo como selecionado</p>
-          <p>Clique uma vez para selecionar um item específico</p>
-        </div>
-        <div class="centralizar-estrutura">
-          <input type="text" id="adicionar-tarefa" />
-          <button class="estilo-botoes">Adicionar elemento</button>
-        </div>
-        <ol id="lista-de-elementos-adicionados"></ol>
-        <div class="centralizar-estrutura">
-          <button class="estilo-botoes" id="delete-elements-selected">Remover Selecionados</button>
-          <button class="estilo-botoes">Remover Lista</button>
-          <button class="estilo-botoes">X</button>
-          <button class="estilo-botoes" id="upElement">Up</button>
-          <button class="estilo-botoes" id="downElement">Down</button>
-          <button class="estilo-botoes" id="save-list">Salvar lista</button>
-        </div>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tarefas</title>
+  <meta name="description" content="Lista de tarefas com filtros, reordenação e salvamento no navegador.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✅</text></svg>">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topo">
+    <a class="voltar" href="../../">← Portfólio</a>
+  </header>
+
+  <main class="cartao">
+    <h1>Minha Lista de Tarefas</h1>
+    <p id="funcionamento" class="dica">
+      Clique duas vezes em um item (ou na caixinha) para marcá-lo como concluído.
+      Clique uma vez para selecioná-lo e mover com ↑ e ↓.
+    </p>
+
+    <form id="form-tarefa" class="nova-tarefa">
+      <label for="texto-tarefa" class="visually-hidden">Nova tarefa</label>
+      <input type="text" id="texto-tarefa" placeholder="O que você precisa fazer?" maxlength="120" autocomplete="off">
+      <button type="submit" id="criar-tarefa" class="botao">Adicionar</button>
+    </form>
+
+    <div class="barra">
+      <p id="contador" aria-live="polite"></p>
+      <div class="filtros" role="group" aria-label="Filtrar tarefas">
+        <button type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+        <button type="button" data-filtro="pendentes" aria-pressed="false">Pendentes</button>
+        <button type="button" data-filtro="concluidas" aria-pressed="false">Concluídas</button>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+
+    <ol id="lista-tarefas" class="lista"></ol>
+    <p id="vazio" class="vazio" hidden>Nenhuma tarefa por aqui. ✨</p>
+
+    <div class="acoes">
+      <button type="button" id="mover-cima" class="botao botao--secundario" aria-label="Mover tarefa selecionada para cima">↑</button>
+      <button type="button" id="mover-baixo" class="botao botao--secundario" aria-label="Mover tarefa selecionada para baixo">↓</button>
+      <button type="button" id="remover-selecionado" class="botao botao--secundario">Remover selecionada</button>
+      <button type="button" id="remover-finalizados" class="botao botao--secundario">Remover concluídas</button>
+      <button type="button" id="apaga-tudo" class="botao botao--perigo">Apagar tudo</button>
+    </div>
+    <p class="dica dica--centro">As tarefas ficam salvas automaticamente neste navegador.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>

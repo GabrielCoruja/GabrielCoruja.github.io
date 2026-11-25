@@ -1,28 +1,29 @@
-Eis aqui um gerador de memes
+# 😂 Gerador de Memes
 
-Instruções a seguir para se ter um gerador de memes: 
+Gerador de memes feito com **HTML, CSS e JavaScript puro**. Escolha uma imagem, escreva o texto de cima e de baixo e baixe o meme pronto.
 
-O site deve possuir uma caixa de texto com a qual o usuário pode interagir para inserir texto sobre a imagem escolhida;
+**🔗 Ver online:** https://gabrielcoruja.github.io/projetos/meme-generator-project/
 
-O site deve permitir que o usuário faça upload de uma imagem de seu computador. A imagem escolhida deve ocupar o espaço delimitado pela moldura;
+## Funcionalidades
 
-O site deve ter uma moldura em volta da área onde a imagem aparecerá depois de ser escolhida;
+- **Enviar imagem** do computador, pelo botão ou **arrastando e soltando**.
+- **Quatro imagens de exemplo** para testar na hora (SVGs que ficam no próprio projeto).
+- **Texto superior e inferior** em tempo real, no estilo clássico de meme: Impact, maiúsculas, contorno preto.
+- **Tamanho e cor do texto** ajustáveis.
+- **Molduras**: fogo, água e terra, as três do desafio original.
+- **Baixar como PNG**: imagem e texto são desenhados num `<canvas>`, com quebra automática de linha.
+- **Modo escuro** automático e layout responsivo (no celular, a prévia fica em cima).
 
-O texto inserido por quem usa deve, em tempo real, ser inserido sobre a imagem escolhida, na parte inferior da mesma. Se não houver imagem inserida, ele deve ser inserido sobre a área emoldurada na posição correta;
+## Como funciona
 
-O texto deve ser estilizado de forma a ser grande e legível.
+- A prévia usa **container queries** (`cqw`): o tamanho do texto é proporcional à largura da imagem, então a prévia e o PNG ficam iguais.
+- No download, o script mede cada palavra com `measureText` para quebrar as linhas e desenha o texto com `strokeText` e `fillText`.
+- A imagem enviada é lida com `URL.createObjectURL` e não sai do navegador.
 
+## Histórico
 
-Bônus: (elementos adicionais para melhorar o gerador de memes)
+Projeto de 2019, do início dos meus estudos na Trybe. A primeira versão tinha o upload de imagem e os dois textos em tempo real, mas usava posições fixas em pixels (o texto saía do lugar em outras telas) e uma imagem padrão de um site externo, que saiu do ar. Agora os exemplos são locais e o projeto continua sem frameworks.
 
-Faça duas caixas de texto: uma inserindo texto na parte de cima da imagem e a outra na parte de baixo;
+## Como executar
 
-Faça um botão que, quando clicado, aumenta o tamanho da letra do texto sem que este ultrapasse a moldura da imagem. Um segundo botão deve diminuir o tamanho da letra;
-
-Permita ao usuário customizar a imagem dele acrescentando a ela uma de três bordas à sua escolha. O usuário deve apertar um botão e uma borda deve emoldurar a imagem;
-
-Tenha um conjunto de imagens pré prontas de memes famosos para o usuário escolher. Liste miniaturas das imagens e, mediante clique do usuário, essa imagem deve aparecer dentro da moldura para ser customizada.
-
-Limite o tamanho do texto que o usuário pode inserir. A quantidade máxima de caracteres pode ser definida por você.
-
-Além de abrir o Pull Request com o seu código, conforme instruído, suba-o também para o GitHub pages, para que todos possam vê-lo online!
+Abra o `index.html` no navegador.

@@ -1,70 +1,58 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Animação com pixel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Art · Paleta de Cores</title>
+  <meta name="description" content="Desenhe pixel a pixel, escolha cores e baixe sua arte como PNG.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <h1>Paleta de cores</h1>
-  <div class="div-cores">
-    <div class="cores" id="paleta1"></div>
-    <div class="cores" id="paleta2"></div>
-    <div class="cores" id="paleta3"></div>
-    <div class="cores" id="paleta4"></div>
-  </div>
-  <div class="div-cores">
-    <div id="selecionar-cor"></div>
-  </div>
-  <table id="tabela2">
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
-  <div class="div-cores">
-    <button type="button" class="botão-limpar">Limpar quadro</button>
-  </div>
-  <div class="div-cores">
-    <input type="number" placeholder="Estilize e clique ao lado" id="input">
-    <button type="button" class="botão-criar-nova-tabela-pixel">Clique para estilizar</button>
-  </div>
+  <header class="topo">
+    <a class="voltar" href="../../">← Portfólio</a>
+  </header>
+
+  <main class="app">
+    <h1>Pixel Art</h1>
+    <p class="descricao">Escolha uma cor e clique (ou arraste) nos pixels para desenhar.</p>
+
+    <section class="painel" aria-labelledby="titulo-paleta">
+      <h2 id="titulo-paleta">Paleta de Cores</h2>
+      <div id="color-palette" class="paleta" role="radiogroup" aria-label="Cores da paleta"></div>
+      <div class="ferramentas">
+        <label class="cor-livre">
+          <input type="color" id="cor-personalizada" value="#4f46e5">
+          Cor livre
+        </label>
+        <button type="button" id="nova-paleta" class="botao botao--secundario">🎲 Novas cores</button>
+        <button type="button" id="borracha" class="botao botao--secundario" aria-pressed="false">🧽 Borracha</button>
+      </div>
+      <p class="cor-atual">Cor selecionada: <span id="selecionar-cor" class="amostra"></span></p>
+    </section>
+
+    <section class="painel" aria-label="Quadro de pixels">
+      <div id="pixel-board" class="quadro" style="--tamanho: 5"></div>
+    </section>
+
+    <section class="painel controles" aria-label="Controles do quadro">
+      <form id="form-tamanho" class="tamanho" novalidate>
+        <label for="board-size">Tamanho do quadro (5 a 50)</label>
+        <div class="linha">
+          <input type="number" id="board-size" min="5" max="50" value="5" inputmode="numeric">
+          <button type="submit" id="generate-board" class="botao">Gerar quadro</button>
+        </div>
+        <p id="mensagem-tamanho" class="mensagem" role="status"></p>
+      </form>
+      <div class="linha">
+        <button type="button" id="clear-board" class="botao botao--secundario">Limpar quadro</button>
+        <button type="button" id="alternar-grade" class="botao botao--secundario" aria-pressed="true">Grade</button>
+        <button type="button" id="baixar" class="botao">⬇ Baixar PNG</button>
+      </div>
+      <p class="dica">Seu desenho fica salvo neste navegador automaticamente.</p>
+    </section>
+  </main>
+
   <script src="script.js"></script>
 </body>
-
 </html>

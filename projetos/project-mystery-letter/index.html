@@ -1,20 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Iniciando carta misteriosa</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta Misteriosa</title>
+  <meta name="description" content="Transforme uma frase em uma carta montada com recortes de revista.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Carta Misteriosa</h1>
-    <div id="interaçao-usuario-e-site">
-        <p>Gere uma carta misteriosa adicionando uma frase:</p>
-        <input type="text" id="frase-carta-adicionada-pelo-usuario">
-        <button onClick="ativarCarta()">Estilizador</button>
+  <header class="topo">
+    <a class="voltar" href="../../">← Portfólio</a>
+  </header>
+
+  <main class="app">
+    <h1><span>Carta</span> <span>Misteriosa</span></h1>
+
+    <form id="form-carta" class="formulario" novalidate>
+      <label for="carta-texto">Gere uma carta misteriosa adicionando uma frase:</label>
+      <div class="linha">
+        <input type="text" id="carta-texto" maxlength="200" placeholder="Ex.: Encontre-me na praça à meia-noite" autocomplete="off">
+        <button type="submit" id="criar-carta" class="botao">Gerar carta</button>
+      </div>
+      <p id="carta-contador" class="contador" aria-live="polite"></p>
+    </form>
+
+    <section class="mesa" aria-label="Carta gerada">
+      <p id="carta-gerada" class="carta" aria-live="polite"></p>
+      <p id="mensagem-vazia" class="vazia">Sua carta aparece aqui. ✂️</p>
+    </section>
+
+    <div class="acoes">
+      <button type="button" id="embaralhar" class="botao botao--secundario" disabled>🔀 Embaralhar estilos</button>
+      <button type="button" id="copiar" class="botao botao--secundario" disabled>📋 Copiar texto</button>
     </div>
-    <div id="recebe-frase-gerada"></div>
-    <script src="script.js"></script>
+    <p class="dica">Dica: clique em uma palavra da carta para trocar só o estilo dela.</p>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
